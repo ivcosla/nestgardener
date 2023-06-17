@@ -1,0 +1,12 @@
+services:
+  emqx:
+    image: emqx/emqx
+    environment:
+      - DEV_LISTENERS__TCP__DEFAULT__BIND=1883
+    ports:
+      - '1883:1883'
+      - '18083:18083'
+
+volumes:
+  data:
+    name: 'mqtt-broker-data'
