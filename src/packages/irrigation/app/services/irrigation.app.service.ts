@@ -1,8 +1,8 @@
 import { v1 } from 'uuid';
 import { Injectable } from '@nestjs/common';
 import { CommandBus } from '@nestjs/cqrs';
-import { ReadHumidityCommand } from '../../domain/commands/read-humidity.command';
-import { ReadHumidityHandlerResult } from '../../domain/commands/read-humidity.handler';
+import { ReadHumidityCommand } from '../commands/read-humidity.command';
+import { ReadHumidityHandlerResult } from '../commands/read-humidity.command.handler';
 
 type IIrrigationService = {
   readHumidity: (gpio: number) => Promise<number>;

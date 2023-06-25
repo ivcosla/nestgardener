@@ -1,11 +1,11 @@
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { ReadHumidityCommand } from './read-humidity.command';
 import { Logger } from '@nestjs/common';
-import { HumidityReadEvent } from '../events/humidity-read.domain.event';
-import { CommandResult } from '../../../../lib/commandBus/commandResult';
+import { HumidityReadEvent } from '../../domain/events/humidity-read.event';
+import { CommandResult } from '../../../../lib/command-bus/commandResult';
 import { err, ok } from 'neverthrow';
 import { CommandErroredEvent } from '../../../shared/command-errored/command-errored.domain.event';
-import { HumidityServiceFactory } from '../../infrastructure/sensors/soil-humidity/soil-humidity.factory';
+import { HumidityServiceFactory } from '../../infrastructure/soil-humidity.factory';
 
 export type ReadHumidityHandlerResult = CommandResult<
   {

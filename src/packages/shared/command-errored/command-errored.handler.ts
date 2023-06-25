@@ -8,11 +8,14 @@ import { GLOBAL_CONFIG } from '../config/global.config';
 export class CommandErroredHandler
   implements IEventHandler<CommandErroredEvent>
 {
-  constructor(@Inject('PATRON_SERVICE') private client: ClientProxy) {
+  constructor(@Inject('MqttClient') private client: ClientProxy) {
     console.log('CommandErroredHandler created');
   }
   handle(event: CommandErroredEvent) {
-    console.log('Im the event handler handling the event!');
+    console.log(
+      'Im the event handler handling the event!',
+      JSON.stringify(event),
+    );
 
     const errorEvent = {
       ...event,

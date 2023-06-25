@@ -1,4 +1,4 @@
-import { IssuerContext } from '../../../lib/commandBus/issuerContext';
+import { IssuerContext } from '../../../lib/command-bus/issuerContext';
 
 export type ICommandErroredEvent = {
   context: IssuerContext;

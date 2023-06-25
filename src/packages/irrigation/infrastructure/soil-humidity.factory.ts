@@ -1,6 +1,6 @@
 import { Result } from 'neverthrow';
-import { I2cCapacitiveSoilHumidityService } from './i2c-capacitive-soil-humidity.service';
-import { IBoardService } from '../../../../shared/board/board.service';
+import { I2cCapacitiveSoilHumidityService } from './i2c-capacitive-soil-humidity.sensor.service';
+import { IBoardService } from '../../shared/board/board.service';
 import { Inject, Injectable } from '@nestjs/common';
 
 export type SoilHumidityService = {

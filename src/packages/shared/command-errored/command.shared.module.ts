@@ -6,7 +6,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   imports: [
     ClientsModule.register([
       {
-        name: 'PATRON_SERVICE',
+        name: 'MqttClient',
         transport: Transport.MQTT,
 
         options: {

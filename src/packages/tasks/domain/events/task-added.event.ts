@@ -1,0 +1,14 @@
+import { IssuerContext } from '../../../../lib/command-bus/issuerContext';
+import { Task } from '../task';
+
+export type ITaskAddedEvent = {
+  data: Task;
+  context: IssuerContext & { command: string };
+};
+
+export class TaskAddedEvent implements ITaskAddedEvent {
+  constructor(
+    public readonly data: ITaskAddedEvent['data'],
+    public readonly context: ITaskAddedEvent['context'],
+  ) {}
+}

@@ -35,6 +35,7 @@ type FakeBoardPins =
 const globalConfig = z.object({
   NODE_ENV: z.string().default('development'),
   THING_ID: z.string(),
+  ROOM_ID: z.string(),
   TARGET: z.enum(['local', 'rpi1mB']).default('local'),
 
   FAKE_BOARD: z.record(z.string(), z.function().returns(z.number())),
@@ -70,12 +71,14 @@ const originalConfig =
     ? ({
         NODE_ENV: 'test',
         THING_ID: 'test',
+        ROOM_ID: 'test',
         TARGET: 'local',
         FAKE_BOARD: fakePinArray,
       } as const)
     : globalConfig.parse({
         NODE_ENV: process.env.NODE_ENV,
         THING_ID: process.env.THING_ID,
+        ROOM_ID: process.env.ROOM_ID,
         TARGET: process.env.TARGET,
         FAKE_BOARD: fakePinArray,
       });
