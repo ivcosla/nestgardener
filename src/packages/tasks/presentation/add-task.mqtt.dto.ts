@@ -1,5 +1,5 @@
 import { z } from 'nestjs-zod/z';
-import { issuerContextTransportDtoSchema } from '../../../lib/command-bus/issuerContext';
+import { issuerContextTransportDtoSchema } from '../../../lib/command-bus/issuer-context';
 import { createZodDto } from 'nestjs-zod';
 
 const cronDtoSchemaCommon = z.object({

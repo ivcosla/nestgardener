@@ -1,4 +1,4 @@
-import { CronOrServiceIssuerContext } from '../../../../lib/command-bus/issuerContext';
+import { CronOrServiceIssuerContext } from '../../../../lib/command-bus/issuer-context';
 
 export type ICronTickedEvent = {
   data: {

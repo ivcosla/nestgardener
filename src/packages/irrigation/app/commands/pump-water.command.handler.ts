@@ -1,6 +1,6 @@
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { Logger } from '@nestjs/common';
-import { CommandResult } from '../../../../lib/command-bus/commandResult';
+import { CommandResult } from '../../../../lib/command-bus/command-result';
 import { err, ok } from 'neverthrow';
 import { CommandErroredEvent } from '../../../shared/command-errored/command-errored.domain.event';
 import { PumpWaterCommand } from './pump-water.command';
@@ -35,7 +35,7 @@ export class PumpWaterCommandHandler
 
     const context = {
       ...command.context,
-      command: 'read-humidity',
+      command: 'pump-water',
     };
 
     const pumpResult = await this.waterPumpService.pumpFor(

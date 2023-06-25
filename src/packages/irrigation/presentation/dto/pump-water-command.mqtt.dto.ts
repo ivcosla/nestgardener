@@ -2,12 +2,12 @@ import { z } from 'nestjs-zod/z';
 import { issuerContextTransportDtoSchema } from '../../../../lib/command-bus/issuer-context';
 import { createZodDto } from 'nestjs-zod';
 
-const togglePinDtoSchema = z.object({
+export const pumpWaterCommandSchema = z.object({
   input: z.object({
     pin: z.number().int(),
-    value: z.number().int().min(0).max(1),
+    durationInMilliseconds: z.number().int(),
   }),
   context: issuerContextTransportDtoSchema,
 });
 
-export class TogglePinCommandDto extends createZodDto(togglePinDtoSchema) {}
+export class PumpWaterCommandDto extends createZodDto(pumpWaterCommandSchema) {}

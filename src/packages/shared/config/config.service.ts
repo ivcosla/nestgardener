@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { GLOBAL_CONFIG } from './global.config';
-import { Knex } from 'knex';
-import { connection } from '../../../../knexfile';
+import { Config } from './config';
 
 @Injectable()
-export class ConfigService {
-  env: string = GLOBAL_CONFIG.NODE_ENV;
-  target: 'local' | 'rpi1mB' = GLOBAL_CONFIG.TARGET;
-  database: Knex = connection;
+export class ConfigService implements Config {
+  env: Config['env'];
+  roomId: string;
+  thingId: string;
+  target: 'local' | 'rpi1mB';
   wifi: {
     ssid: string;
     password: string;
   };
+  database: import('knex').Knex<any, unknown[]>;
 }

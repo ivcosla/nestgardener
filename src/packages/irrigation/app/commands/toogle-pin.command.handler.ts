@@ -1,6 +1,6 @@
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { TogglePinCommand } from './toogle-pin.command';
-import { CommandResult } from '../../../../lib/command-bus/commandResult';
+import { CommandResult } from '../../../../lib/command-bus/command-result';
 import { IBoardService } from '../../../shared/board/board.service';
 import { PinToggledEvent } from '../../domain/events/pin-toggled.event';
 import { CommandErroredEvent } from '../../../shared/command-errored/command-errored.domain.event';
@@ -18,7 +18,9 @@ export type TogglePinHandlerResult = CommandResult<
 >;
 
 @CommandHandler(TogglePinCommand)
-export class TogglePinHandler implements ICommandHandler<TogglePinCommand> {
+export class TogglePinCommandHandler
+  implements ICommandHandler<TogglePinCommand>
+{
   constructor(
     private eventBus: EventBus,
     @Inject('BoardService') private board: IBoardService,

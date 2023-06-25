@@ -1,4 +1,4 @@
-import { IssuerContext } from '../../../../lib/command-bus/issuerContext';
+import { IssuerContext } from '../../../../lib/command-bus/issuer-context';
 
 export type ITaskDeletedEvent = {
   data: {

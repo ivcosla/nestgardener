@@ -3,7 +3,7 @@ import { AddTaskCommand } from './add-task.command';
 import { TasksService } from '../tasks.service';
 import { Task } from '../../domain/task';
 import { TaskAddedEvent } from '../../domain/events/task-added.event';
-import { CommandResult } from '../../../../lib/command-bus/commandResult';
+import { CommandResult } from '../../../../lib/command-bus/command-result';
 import { CommandErroredEvent } from '../../../shared/command-errored/command-errored.domain.event';
 import { err, ok } from 'neverthrow';
 

@@ -1,7 +1,7 @@
 import { CqrsModule } from '@nestjs/cqrs';
 import { IrrigationService } from './irrigation.app.service';
 import { Test } from '@nestjs/testing';
-import { ReadHumidityHandler } from '../commands/read-humidity.command.handler';
+import { ReadHumidityCommandHandler } from '../commands/read-humidity.command.handler';
 import { BoardModule } from '../../../shared/board/board.module';
 import { ok } from 'neverthrow';
 import { HumidityServiceFactory } from '../../infrastructure/soil-humidity.factory';
@@ -12,7 +12,7 @@ describe('IrrigationAppService', () => {
       imports: [CqrsModule, BoardModule],
       providers: [
         IrrigationService,
-        ReadHumidityHandler,
+        ReadHumidityCommandHandler,
         HumidityServiceFactory,
       ],
     })

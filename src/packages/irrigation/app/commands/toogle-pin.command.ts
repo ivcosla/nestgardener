@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { IssuerContext } from '../../../../lib/command-bus/issuerContext';
+import { IssuerContext } from '../../../../lib/command-bus/issuer-context';
 
 export const pinToggledDomainInputSchema = z.object({
   pin: z.number(),

@@ -2,7 +2,7 @@ import { Logger } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { GLOBAL_CONFIG } from '../../packages/shared/config/global.config';
 import { IEvent } from '@nestjs/cqrs';
-import { IssuerContext } from '../command-bus/issuerContext';
+import { IssuerContext } from '../command-bus/issuer-context';
 import { OutboxService } from '../../packages/shared/outbox/app/outbox.service';
 
 type Dependencies = {
