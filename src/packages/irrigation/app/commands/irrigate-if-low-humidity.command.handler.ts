@@ -2,7 +2,7 @@ import { CommandBus, CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { Logger } from '@nestjs/common';
 import { CommandResult } from '../../../../lib/command-bus/command-result';
 import { err, ok } from 'neverthrow';
-import { CommandErroredEvent } from '../../../shared/command-errored/command-errored.domain.event';
+import { CommandErroredEvent } from '../../../shared/generic-command-module/command-errored.domain.event';
 import { PumpWaterCommand } from './pump-water.command';
 import { WaterPumpedEvent } from '../../domain/events/water-pumped.event';
 import { HumidityReadEvent } from '../../domain/events/humidity-read.event';

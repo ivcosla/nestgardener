@@ -1,11 +1,11 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
-import { Task, TaskCron } from '../domain/task';
+import { Task, TaskCron } from './task';
 import { TasksRepository } from '../infrastructure/task.repository';
 import { SchedulerRegistry } from '@nestjs/schedule';
 import { CronJob } from 'cron';
 import { EventBus } from '@nestjs/cqrs';
 import { Result, ok, err } from 'neverthrow';
-import { CronTickedEvent } from '../domain/events/cron-ticked.event';
+import { CronTickedEvent } from './events/cron-ticked.event';
 import { v1 } from 'uuid';
 
 const reshapeTaskIntoCronTickedEvent = (t: TaskCron): CronTickedEvent =>

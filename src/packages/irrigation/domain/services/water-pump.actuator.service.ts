@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { IBoardService } from '../../shared/board/board.service';
+import { IBoardService } from '../../../shared/board/board.service';
 import { Result, err, ok } from 'neverthrow';
 
 @Injectable()

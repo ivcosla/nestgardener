@@ -1,9 +1,9 @@
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { TogglePinCommand } from './toogle-pin.command';
+import { TogglePinCommand } from './toggle-pin.command';
 import { CommandResult } from '../../../../lib/command-bus/command-result';
 import { IBoardService } from '../../../shared/board/board.service';
 import { PinToggledEvent } from '../../domain/events/pin-toggled.event';
-import { CommandErroredEvent } from '../../../shared/command-errored/command-errored.domain.event';
+import { CommandErroredEvent } from '../../../shared/generic-command-module/command-errored.domain.event';
 import { err, ok } from 'neverthrow';
 import { Inject } from '@nestjs/common';
 

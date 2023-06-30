@@ -41,11 +41,13 @@ const globalConfig = z.object({
   FAKE_BOARD: z.record(z.string(), z.function().returns(z.number())),
 });
 
-// GlobalConfig is meant to contain only common required config values that we
-// need to access from anywhere in the app, and that need to either be used
-// in method decorators (e.g. @MessagePattern) or is useful for running in
-// non-board environments (e.g. local dev) and thus don't make sense to inject
-// those values as part of the DI configuration
+/**
+ * GlobalConfig is meant to contain only common required config values that we
+ * need to access from anywhere in the app, and that need to either be used
+ * in method decorators (e.g. @MessagePattern) or is useful for running in
+ * non-board environments (e.g. local dev) and thus don't make sense to inject
+ * those values as part of the DI configuration
+ */
 export type GlobalConfig = Omit<z.infer<typeof globalConfig>, 'FAKE_BOARD'> & {
   FAKE_BOARD: Record<`BOARD_TEST_PIN_${FakeBoardPins}`, () => number>;
 };

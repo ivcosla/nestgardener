@@ -17,4 +17,4 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   ],
   providers: [CommandErroredHandler],
 })
-export class CommandErroredModule {}
+export class GenericCommandModule {}

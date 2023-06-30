@@ -2,9 +2,9 @@ import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { Logger } from '@nestjs/common';
 import { CommandResult } from '../../../../lib/command-bus/command-result';
 import { err, ok } from 'neverthrow';
-import { CommandErroredEvent } from '../../../shared/command-errored/command-errored.domain.event';
+import { CommandErroredEvent } from '../../../shared/generic-command-module/command-errored.domain.event';
 import { PumpWaterCommand } from './pump-water.command';
-import { WaterPumpService } from '../../infrastructure/water-pump.actuator.service';
+import { WaterPumpService } from '../../domain/services/water-pump.actuator.service';
 import { WaterPumpedEvent } from '../../domain/events/water-pumped.event';
 
 export type PumpWaterCommandHandlerResult = CommandResult<

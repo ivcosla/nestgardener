@@ -13,7 +13,6 @@ async function tryReconnectWifi(config: { ssid: string; password: string }) {
   const { ssid, password } = config;
 
   try {
-    // for now don't mind if it fails
     await wifi.connect({
       ssid,
       password,

@@ -2,6 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { NestExpressApplication } from '@nestjs/platform-express';
+import { patchNestJsSwagger } from 'nestjs-zod';
+patchNestJsSwagger();
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -20,6 +22,7 @@ async function bootstrap() {
 
   await app.init();
   await app.startAllMicroservices();
+
   await app.listen(8093);
 }
 bootstrap();

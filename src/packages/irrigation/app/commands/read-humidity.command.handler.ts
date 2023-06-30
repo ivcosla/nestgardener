@@ -4,8 +4,8 @@ import { Logger } from '@nestjs/common';
 import { HumidityReadEvent } from '../../domain/events/humidity-read.event';
 import { CommandResult } from '../../../../lib/command-bus/command-result';
 import { err, ok } from 'neverthrow';
-import { CommandErroredEvent } from '../../../shared/command-errored/command-errored.domain.event';
-import { HumidityServiceFactory } from '../../infrastructure/soil-humidity.factory';
+import { CommandErroredEvent } from '../../../shared/generic-command-module/command-errored.domain.event';
+import { HumidityServiceFactory } from '../../domain/services/soil-humidity.factory';
 
 export type ReadHumidityHandlerResult = CommandResult<
   {

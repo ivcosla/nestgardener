@@ -5,7 +5,7 @@ import { CronTickedEvent } from '../../../tasks/domain/events/cron-ticked.event'
 import {
   TogglePinCommand,
   pinToggledDomainInputSchema,
-} from '../commands/toogle-pin.command';
+} from '../commands/toggle-pin.command';
 
 const irrigationModuleCronSubscriptions = ['toggle-pin'];
 

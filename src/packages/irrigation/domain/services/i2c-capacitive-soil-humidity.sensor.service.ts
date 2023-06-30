@@ -1,4 +1,7 @@
-import { Ads1115Pins, IBoardService } from '../../shared/board/board.service';
+import {
+  Ads1115Pins,
+  IBoardService,
+} from '../../../shared/board/board.service';
 import { SoilHumidityService } from './soil-humidity.factory';
 import { Result } from 'neverthrow';
 

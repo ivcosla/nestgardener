@@ -1,7 +1,7 @@
 import { CommandHandler, EventBus } from '@nestjs/cqrs';
 import { DeleteTaskCommand } from './delete-task.command';
 import { TaskDeletedEvent } from '../../domain/events/task-deleted.event';
-import { TasksService } from '../tasks.service';
+import { TasksService } from '../../domain/tasks.service';
 
 export type DeleteTaskCommandHandlerResult = {
   $events: [TaskDeletedEvent];
