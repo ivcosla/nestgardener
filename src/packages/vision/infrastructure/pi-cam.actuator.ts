@@ -1,5 +1,9 @@
 import { StillCamera } from 'pi-camera-connect';
 
+export type ICameraService = {
+  takePicture(): Promise<ImageData>;
+};
+
 export class CameraService implements ICameraService {
   private readonly camera: StillCamera;
 
@@ -13,10 +17,6 @@ export class CameraService implements ICameraService {
     return new ImageData(new Uint8ClampedArray(image), 1920, 1080);
   }
 }
-
-export type ICameraService = {
-  takePicture(): Promise<ImageData>;
-};
 
 export class FakeCameraService implements ICameraService {
   async takePicture(): Promise<ImageData> {

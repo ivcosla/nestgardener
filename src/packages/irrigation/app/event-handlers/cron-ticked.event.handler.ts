@@ -15,7 +15,12 @@ import {
 import { readHumidityCommandInputSchema } from '../../presentation/dto/read-humidity-command.mqtt.dto';
 import { irrigateIfLowHumidityCommandInputSchema } from '../../presentation/dto/irrigate-if-low-humidity.mqtt.dto';
 
-const irrigationModuleCronSubscriptions = ['toggle-pin'];
+const irrigationModuleCronSubscriptions = [
+  'toggle-pin',
+  'pump-water',
+  'read-humidity',
+  'irrigate-if-low-humidity',
+];
 
 @Injectable()
 export class IrrigationCronSaga {

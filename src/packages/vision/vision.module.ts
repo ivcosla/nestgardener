@@ -13,7 +13,7 @@ import { CqrsModule } from '@nestjs/cqrs';
     {
       provide: CameraService,
       useFactory: (config: ConfigService) => {
-        if (['local', 'test'].includes(config.env)) {
+        if (['development', 'test'].includes(config.env)) {
           return new FakeCameraService();
         }
 

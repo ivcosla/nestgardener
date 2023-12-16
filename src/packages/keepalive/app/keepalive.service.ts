@@ -69,7 +69,7 @@ export class KeepAliveService {
       .map(() => {
         this.eventBus.publish(new WifiReconnectedEvent(data, context));
       })
-      .mapErr((e: any) => {
+      .mapErr((e) => {
         this.eventBus.publish(
           new WifiFailedToReconectEvent(
             {
